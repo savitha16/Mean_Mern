@@ -1,3 +1,8 @@
+23/06/2018
+--------------------------------------------------------------
+
+
+
 db.getCollection('Bank').find({})
 /*Account Number, balance
 
@@ -166,7 +171,7 @@ CustomerDetails:{CustomerId:"c7",CustomerName:"Aryan",street:"Ramapuram",
            db.Bank.aggregate([{$group:{_id:"$BranchDetails.BranchName",NoCust:{$sum:1}}}])
         
  ---------------------------------------------------------       
-     14. Deposit an additional Rs. 20,000 to sru’s bank account.
+     14. Deposit an additional Rs. 20,000 to sruâ€™s bank account.
            
            db.Bank.update({"CustomerDetails.CustomerName":"sru"},{$inc:Balance:20000}})
            
