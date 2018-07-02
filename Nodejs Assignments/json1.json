@@ -1,0 +1,27 @@
+[{
+
+"name":"Samsung Galaxy",
+"cost":15000,
+"avail":"In stock"
+},
+{
+    "name":"Apple Iphone",
+    "cost":35000,
+    "avail":"on back order"
+    },
+
+    {
+        "name":"Vivo v9",
+        "cost":25000,
+        "avail":"In stock"
+        },
+    
+        {
+
+
+            "name":"Redmi 9",
+            "cost":30000,
+            "avail":"on back order"
+            }
+
+        ]
