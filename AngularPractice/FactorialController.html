@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1>Factorial</h1>
+	<script src="Angular/angular.min.js">
+	</script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope){
+			$scope.factorial=function(){
+				//$scope.value;
+				var fact=1;
+				var a=$scope.value
+				while(a>1)
+				{
+					fact=fact*a;
+					a--;
+					
+				}
+				$scope.result=fact;
+				return fact;
+	}
+		});
+
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myCtrl">
+
+	Enter value:<input type="number" ng-model="value"/><br>
+	Factorial:<input type="number" ng-model="result"/><br>
+	<input type="button" value="calculate" ng-click="factorial()"/>
+	
+</body>
+</html>
+

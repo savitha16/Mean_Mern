@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="Angular/angular.min.js">
+	</script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope,CalService){
+			//$scope.value=' ';
+			$scope.sqrttt=function(){
+				//$scope.res= CalService.sqrttt($scope.value);
+				return CalService.sqrttt($scope.value);
+			}
+			$scope.factorial=function(){
+		//		$scope.res=CalService.factorial($scope.value);
+				return CalService.factorial($scope.value);
+			}
+
+		});
+		app.service("CalService",function(){
+			this.sqrttt=function(a){
+				if(!a){
+					return;
+				}
+			return Math.sqrt(a);
+		}
+		
+		this.factorial=function(b){
+			
+			if (!b){
+				return;
+			}
+			var fact=1;
+			for(var i=1;i<=b;i++){
+				fact=fact*i;
+			}
+			return fact;
+
+		}
+		});
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myCtrl">
+	Enter a Number=<input type="number" ng-model="value"/>
+	<!--button ng-click="sqrttt()">Squareroot</button>-->
+
+
+	<input type="button" value="SquareRoot"  ng-click="sqrttt()"/>
+	<input type="button" value="Factorial" ng-click="factorial()"/>
+<!--<input type="text" value="{{res}}">-->
+	<p>Square Root:{{sqrt()}}</p>
+	<p>Factorial:{{factorial()}}</p>
+</body>
+</html>

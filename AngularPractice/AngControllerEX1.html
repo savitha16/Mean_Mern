@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="Angular/angular.min.js"></script>
+
+<script>
+	var app=angular.module("myApp",[]);
+	app.controller("myCtrl",function($scope){
+		$scope.display=function(){
+		alert($scope.name);
+		 //$scope.marks = [10,20,30];
+		// $scope.employee = { empId: 'e1001', empName : 'Ram'};
+		// $scope.factorial = function(){
+
+		 }
+
+	}
+
+);
+</script>
+
+
+</head>
+<body ng-App="myApp" ng-controller="myCtrl" ng-init="name='saviiii'">
+	  //{{ employee.empId }}
+	  {{display()}}
+	</body>
+	</html>

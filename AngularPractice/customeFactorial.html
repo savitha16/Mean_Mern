@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="Angular/angular.min.js">
+	</script>
+	<script>
+		var app=angular.module("customFilterApp",[]);
+		app.filter("convertFactorial",function(){
+			return function(item){
+					var fact=1;
+				for(var i=1;i<=item;i++){
+				
+					fact=fact*i;
+				}
+					return fact;
+		}})
+
+
+
+		
+
+
+</script>
+</head>
+<body ng-App="customFilterApp"  >
+	input:<input type="number" ng-model="number">
+<p>{{number|convertFactorial}}</p>
+	
+
+
+	</body>
+	</html>
