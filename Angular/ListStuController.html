@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="Angular/angular.min.js">
+	</script>
+	<h1>Student Details</h1>
+	<script>
+		var app=angular.module("studentApp",[]);
+		app.controller("studentController",function($scope){
+			$scope.student=[{
+				name:'savi',
+				Subjects:[
+
+				{sub:'corejava',marks:70},
+				{sub:'Node',marks:80},
+				{sub:'Angular',marks:90}
+				]},
+				{name:'sru',
+				Subjects:[
+
+				{sub:'corejava',marks:70},
+				{sub:'Node',marks:80},
+				{sub:'Angular',marks:90}
+				]}
+
+
+
+			,
+				total:function(){
+					sum=0;
+					for(var i=0;i<$scope.student.Subjects.length;i++){
+						sum=sum+$scope.student.Subjects[i].marks;
+
+					}
+					return sum;
+				},
+				average:function(){
+					return $scope.student.total()/$scope.student.Subjects.length;
+
+				
+			}]
+		});
+	</script>
+	<style>
+	table ,td,th{border:2px solid blue}
+	th{color:black;background-color: pink}
+</style>
+</head>
+<body>
+	<div ng-App="studentApp" ng-controller="studentController" >
+
+		<table>
+			<tr>
+				<th>Name of student</th>
+				<th>marks</th>
+				<th>Total Marks</th>
+				<th>Average Marks</th>
+			</tr>
+				
+			<tr>
+				
+<td ng-repeat="obj in student">
+				
+		{{obj[0].name|uppercase}}
+
+			</td>
+				<td> <li ng-repeat="subject in obj[0].Subjects|orderBy:'marks'">
+				{{subject.marks}}</li></td>
+				<td>{{obj[0].total()}}</td>
+				<td>{{obj[0].average()}}</td>
+			</tr>
+
+			<tr>
+
+
+<td>
+				
+		{{obj.name[1]|uppercase}}
+
+			</td>
+				<td> <li ng-repeat="subject in obj[1].Subjects|orderBy:'marks'">
+				{{subject.marks}}</li></td>
+				<td>{{obj[1].total()}}</td>
+				<td>{{obj[1].average()}}</td>
+			</tr>
+
+			<!--ul>
+				<li ng-repeat="subject in student.Subjects|orderBy:'marks'">
+					{{subject.name+',marks:'+subject.marks}}
+				</li>
+			</ul>-->
+		</table>
+		
+	</div>
+</body>
+</html>

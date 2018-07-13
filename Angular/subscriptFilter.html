@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="Angular/angular.min.js">
+	</script>
+	<script >
+		var app=angular.module("myApp",[]);
+		app.filter("subscriptFilter",function(){
+			return function(i){
+		   if(i === null || i === ""){
+    	return  ;
+    }
+  
+    var j = i % 10,
+        k = i % 100;
+     
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    
+else{
+    return i + "th";
+}
+
+}
+	});
+		app.controller("myCtrl",function($scope){
+			$scope.number="";
+		});
+		
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myCtrl">
+	input:<input type="number" ng-model="number"/>
+	{{number|subscriptFilter}}
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="Angular/angular.min.js">
+	</script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope){
+			$scope.Toggle=function(){
+				$scope.Show='true';
+
+			}
+			
+		});
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myCtrl">
+	<input type="button"  value="Toggle" ng-click="Toggle()">
+<div ng-show="Show">
+	<h1>Phones</h1>
+	<li>samsung</li>
+	<li>Redmi</li>
+	<li>Iphone</li>
+</div>
+
+</body>
+</html>
+
